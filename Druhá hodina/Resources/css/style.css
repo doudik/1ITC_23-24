@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+    color: whitesmoke;
+}
+.container{
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 50vw;
+    height: 40vh;
+    display: block;
+    position: relative;
+    left: calc(50vw - 25vw);
+    top: 25vh;
+}
+.container:hover{
+    background-color: pink;
+}
+
+.header{
+    color: red;
+    text-align: center;
+    margin: 5px;
+}
+.header h1{
+    text-decoration: underline rgba(255, 255, 255, 0.8);
+}
+.list{
+    width: auto;
+    height: auto;
+    padding-left: 5%;
+}
+.list li{
+    margin-top: 5px;
+    font-size: larger;
+}

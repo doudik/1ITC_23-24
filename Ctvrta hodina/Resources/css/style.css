@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    display: flex;
+}
+img{
+    width: 200px;
+    height: auto;
+}
+#id{
+    color: green;
+}
+.container{
+    width: 200px;
+    height: auto;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container ol{
+    font-style: italic;
+}
+.container li{
+    text-decoration: none;
+    list-style-type: none;
+}
+.white-font{
+    color: white;
+}

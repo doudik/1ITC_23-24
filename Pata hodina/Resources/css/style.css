@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+    color: white;
+}
+main{
+    display: flex;
+}
+main{
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+main ol{
+    margin-left: 50px;
+}
+.container{
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+}
+.obrazek{
+    width: 200px;
+    height: 100%;
+}
+.obrazek img{
+    width: 100%;
+    height: 100%;
+}
+header p{
+    text-align: right;
+}
