@@ -1,24 +1,41 @@
+header{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://hakl.crudex.online/wp-content/uploads/2023/10/kitchen-2165756_1920.webp);
+    object-fit: fill;
+}
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
-body{
-    display:flex;
+.left-box{
+    z-index: 2;
+    position: absolute;
+    top: 40%;
+    color: black;
+    font-weight: 700;
+    font-size: 50px;
+    left: 40%;
 }
-.trida{
-    width: 40vw;
-    height: 50vh;
-    background-color: black;
-    border: 1px solid yellow;
+.left-box h1 {
+    text-shadow: 1px 2px 2px white;
+    font-family: "Comic Sans MS", "Comic";
 }
-
-@media only screen and (max-width: 400px)
- {
-    .trida{
-        width: 100vw;
-        background-color: red;
-    }
-    body{
-        display: grid;
-    }
+.left-box h3{
+    padding: 0 42px 0 42px;
+    text-align: center;
+    text-shadow: 1px 2px 2px white;
+}
+.left-box button{
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #d6bab8;
+    border: none;
+    justify-content: center;
+    margin-left: 60px;
+}
+.left-box button:hover{
+    background-color: rgba(0,0,0,0.4);
+    border: none;
 }
