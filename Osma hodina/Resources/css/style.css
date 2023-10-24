@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display:flex;
+}
+.trida{
+    width: 40vw;
+    height: 50vh;
+    background-color: black;
+    border: 1px solid yellow;
+}
+
+@media only screen and (max-width: 400px)
+ {
+    .trida{
+        width: 100vw;
+        background-color: red;
+    }
+    body{
+        display: grid;
+    }
+}
