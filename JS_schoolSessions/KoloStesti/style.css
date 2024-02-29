@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    background-color: black;
+    width: 700px;
+    height: 400px;
+    margin-top: 200px;
+}
+.row{
+    width: 100%;
+    height: 100%;
+}
+.col{
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
+}
+.p1-container{
+    background-color: rgba(51, 51, 255, 0.4);
+    border-radius: 10px 0 0 10px;
+}
+.p2-container{
+    background-color: rgba(255, 51, 51, 0.4);
+    border-radius: 0 10px 10px 0;
+
+}
+.p-name{
+    display: flex;
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
+    justify-content: center;
+    margin-top: 50%;
+}
