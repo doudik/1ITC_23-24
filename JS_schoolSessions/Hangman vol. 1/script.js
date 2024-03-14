@@ -164,16 +164,16 @@ function newGame() {
   }
   generateButtons();
 }
-
 function generateButtons() {
     let buttonContainer = document.querySelector(".button-letters");
     for(let i = 0; i < ceskaAbeceda.length; i++){
         let button = document.createElement("button");
         button.innerHTML = ceskaAbeceda[i];
-        button.style.margin = "5px";
-        
-        button.style.fontSize = "20px"; 
         button.classList.add("btn", "btn-primary");
         buttonContainer.appendChild(button);
+        button.onclick = () => checkButton(button.innerHTML, i);
     }
+}
+function checkButton(text, index){
+  
 }

@@ -3,28 +3,39 @@
     padding: 0;
 }
 
-.own-container{
+.container{
     width: 100vw;
     height: 100vh;
-    background-color: red;
 }
-.own-container > .dashes{
+.container > .dashes{
     justify-content: center;
     padding-top: 120px;
 }
-.own-container > .dashes ul{
+.container > .dashes ul{
     display: flex;
     justify-content: center;
 }
-.own-container > .dashes ul > li{
+.container > .dashes ul > li{
     list-style: none;
     font-size: 5rem;
     margin: 0 10px 0 10px;
 }
-.own-container > .button-letters{
+.container > .button-letters{
     width: 100%;
-    height: 60%;
-    background-color: yellow;
-    position: absolute; /* bottom fixed */ 
-    bottom: 0;
+    margin-top:200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+.container > .button-letters > button{
+    font-size: 3rem;
+    background-color: white;
+    color: black;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+.container > .button-letters > button:hover{
+    transition: 0.4s;
+    background-color: rgba(0, 0, 0, 0.4);
 }
