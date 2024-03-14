@@ -165,15 +165,49 @@ function newGame() {
   generateButtons();
 }
 function generateButtons() {
-    let buttonContainer = document.querySelector(".button-letters");
-    for(let i = 0; i < ceskaAbeceda.length; i++){
-        let button = document.createElement("button");
-        button.innerHTML = ceskaAbeceda[i];
-        button.classList.add("btn", "btn-primary");
-        buttonContainer.appendChild(button);
-        button.onclick = () => checkButton(button.innerHTML, i);
-    }
+  let buttonContainer = document.querySelector(".button-letters");
+  for (let i = 0; i < ceskaAbeceda.length; i++) {
+    let button = document.createElement("button");
+    button.innerHTML = ceskaAbeceda[i];
+    button.classList.add("btn", "btn-primary");
+    buttonContainer.appendChild(button);
+    button.onclick = () => checkButton(button, i);
+  }
 }
-function checkButton(text, index){
+function checkButton(button, index) {
+  let text = button.innerText.toLowerCase();
+
+  if (checkCorrectness(text)) {
+    console.log(text);
+    button.style.backgroundColor = "lightgreen";
+    button.disabled = true;
+  }else{
+    button.style.backgroundColor = "red";
+    button.disabled = true;
+  }
+  //Refresh the li values
+  UpdateDashes();
+  CheckWinCondition();
+}
+function checkCorrectness(text) {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] == text) {
+      // KUPEC - K U P E C => word[0] = K == text (button.innerText)
+      guessingWord[i] = text;
+      if(i == word.length-2){
+        console.log("anooo!");
+        return true;
+      }
+    }
+  }
+  return false;
+}
+function UpdateDashes() {
+  let li = document.querySelectorAll("li");
+  for (let i = 0; i < li.length; i++) {
+    li[i].innerHTML = guessingWord[i];
+  }
+}
+function CheckWinCondition(){
   
 }
