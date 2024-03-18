@@ -190,18 +190,16 @@ function checkButton(button, index) {
   CheckWinCondition();
 }
 function checkCorrectness(text) {
+  let found = false; // Initialize a flag to track if the letter was found
   for (let i = 0; i < word.length; i++) {
     if (word[i] == text) {
-      // KUPEC - K U P E C => word[0] = K == text (button.innerText)
       guessingWord[i] = text;
-      if(i == word.length-2){
-        console.log("anooo!");
-        return true;
-      }
+      found = true; // Set flag to true because we found at least one match
     }
   }
-  return false;
+  return found; // Return true if we found a match, false otherwise
 }
+
 function UpdateDashes() {
   let li = document.querySelectorAll("li");
   for (let i = 0; i < li.length; i++) {
