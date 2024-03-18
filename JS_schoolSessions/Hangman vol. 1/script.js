@@ -144,9 +144,11 @@ let ceskaAbeceda = [
   "Z",
   "Ž",
 ];
+let lives;
 let word;
 let guessingWord = []; // after generateWordAndDashes -> "_", "_", "_"
 generateWordAndDashes();
+UpdateLives();
 
 function generateWordAndDashes() {
   word = slova[Math.floor(Math.random() * slova.length)];
@@ -156,6 +158,7 @@ function generateWordAndDashes() {
   newGame();
 }
 function newGame() {
+  lives = 10;
   let ul = document.querySelector("ul");
   for (let i = 0; i < guessingWord.length; i++) {
     let dash = document.createElement("li");
@@ -184,10 +187,10 @@ function checkButton(button, index) {
   }else{
     button.style.backgroundColor = "red";
     button.disabled = true;
+    DecreaseLive();
   }
   //Refresh the li values
   UpdateDashes();
-  CheckWinCondition();
 }
 function checkCorrectness(text) {
   let found = false; // Initialize a flag to track if the letter was found
@@ -199,13 +202,43 @@ function checkCorrectness(text) {
   }
   return found; // Return true if we found a match, false otherwise
 }
-
+function DecreaseLive(){
+  if(lives > 0){
+    lives--;
+  }else{
+    GameOver();
+  }
+  UpdateLives();
+}
 function UpdateDashes() {
   let li = document.querySelectorAll("li");
+  let tmp; // counter for "_"
+
   for (let i = 0; i < li.length; i++) {
     li[i].innerHTML = guessingWord[i];
+    if(li[i].innerHTML == "_"){
+      tmp++;
+    }
+  }
+  CheckWinCond(tmp);
+  tmp = 0;
+}
+function CheckWinCond(tmp){
+  if(tmp == 0){
+    alert("You won!");
+  }else if(lives == 0){
+    GameOver();
   }
 }
-function CheckWinCondition(){
-  
+function UpdateLives(){
+  let livesDiv = document.querySelector(".lives");
+  livesDiv.innerHTML = "Lives: " + lives;
+}
+function GameOver(){
+  let dashes = document.querySelector(".dashes");
+  let btnLetters = document.querySelector(".button-letters");
+
+  dashes.style.display = "none";
+  btnLetters.style.display = "none";
+
 }
